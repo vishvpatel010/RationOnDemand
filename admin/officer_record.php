@@ -187,7 +187,7 @@ $row = mysqli_fetch_array($result);
               <!-- page start-->
               <section class="panel">
                   <header class="panel-heading">
-                      Officer List
+                      Officer List     <a class="btn btn-info" type="button" href="stock_update.php" style="float: right;">Update Stock</a><br><br>
                   </header>
                   <div class="panel-body">
                       <div class="adv-table editable-table ">
@@ -208,8 +208,8 @@ $row = mysqli_fetch_array($result);
                                   <th>Aadhar</th>
                                   <th>Total Available Stock</th>
                                   <th>Delivered Stock</th>
-                                  <th>stock Update</th>
                                   <th>Action</th>
+                                  <th>Report</th>
                               </tr>
                               </thead>
                               <?php
@@ -231,12 +231,12 @@ $row = mysqli_fetch_array($result);
                                   <td><?php echo $data['aano']; ?></td>
                                   <td><?php echo $data['stock']; ?></td>
                                   <th><?php $pincode=$data['pincode']; $res = mysqli_query($con,"SELECT *FROM userdata where `pincode`='$pincode' && `delivery_status` = 'YES'"); $count = mysqli_num_rows($res); echo $count; ?></th>
-                                  <td>
-                                  <a class="btn btn-sm btn-outline-secondary badge" type="button" href="stock_update.php?id=<?php echo $data['id']; ?>">Update</a>
-                                    </td>
 
                                   <td> <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#officer_edit<?php echo $data['id']?>">Edit</button>
                                     <a class="btn btn-sm btn-outline-secondary badge" type="button" href="officer_delete.php?id=<?php echo $data['id']; ?>"><i class="fa fa-trash"></i></a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-sm btn-outline-secondary badge" type="button" href="officer_report.php?id=<?php echo $data['id']; ?>">Generate</a>
                                 </td>
                               </tr>
                               <?php 

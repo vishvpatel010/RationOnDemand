@@ -2,7 +2,6 @@
  
   include('authentication.php');
 
-  session_start();
   include('../includes/db.php');
   $id=$_REQUEST['id'];
 

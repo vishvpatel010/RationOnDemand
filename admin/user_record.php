@@ -202,6 +202,7 @@ $row = mysqli_fetch_array($result);
                                   <th>Pincode</th>
                                   <th>Gender</th>
                                   <th>Aadhar</th>
+                                  <th>Delivery Status</th>
                               </tr>
                               </thead>
                               <?php
@@ -224,6 +225,7 @@ $row = mysqli_fetch_array($result);
                                   <td><?php echo $data['pincode']; ?></td>                                  
                                   <td><?php echo $data['gender']; ?></td>
                                   <td><?php echo $data['aano']; ?></td>
+                                  <td><?php echo $data['delivery_status']; ?></td>
                               </tr>
                               <?php } ?>
                               </tbody>

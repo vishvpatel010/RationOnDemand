@@ -123,10 +123,44 @@ $row = mysqli_fetch_array($result);
           <section class="wrapper">
             <!--state overview start-->
       <div class="row state-overview">
-                  <div class="col-lg-3 col-sm-6">
+      <div class="col-lg-3 col-sm-6">
                       <section class="panel">
                           <div class="symbol terques">
                               <i class="fa fa-user"></i>
+                          </div>
+                          <div class="value">
+                              <h1>
+                                  <?php
+                                    $result=mysqli_query($con,"SELECT *FROM userdata where `pincode` = '$pincode'");
+                                    $count=mysqli_num_rows($result);
+                                    echo $count;
+                                  ?>
+                              </h1>
+                              <p><h5>Total Users</h5></p>
+                          </div>
+                      </section>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <section class="panel">
+                          <div class="symbol terques">
+                              <i class="fa fa-user"></i>
+                          </div>
+                          <div class="value">
+                              <h1>
+                                  <?php
+                                    $result=mysqli_query($con,"SELECT *FROM userdata where `pincode` = '$pincode' && `timestamp` > now() - interval 24 hour");
+                                    $count=mysqli_num_rows($result);
+                                    echo $count;
+                                  ?>
+                              </h1>
+                              <p><h5>New Users</h5></p>
+                          </div>
+                      </section>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                      <section class="panel">
+                          <div class="symbol terques">
+                          <i class="fas fa-warehouse"></i>
                           </div>
                           <div class="value">
                               <h1>
@@ -143,7 +177,7 @@ $row = mysqli_fetch_array($result);
                   <div class="col-lg-3 col-sm-6">
                   <section class="panel">
                           <div class="symbol terques">
-                              <i class="fa fa-user"></i>
+                          <i class="fas fa-warehouse"></i>
                           </div>
                           <div class="value">
                               <h1>
@@ -153,16 +187,17 @@ $row = mysqli_fetch_array($result);
                                     echo $count;
                                   ?>
                               </h1>
-                              <p><h5>Total Delivered</h5></p>
+                              <p><h5>Delivered Stock</h5></p>
                           </div>
                       </section>
                   </div>
               </div>
               <!--state overview end-->
-              <center><h1>User List</h1></center>
+              
               
                         <!-- page start-->
                         <section class="panel">
+                        <center><h1>User List</h1></center>
                         <div class="row">
                                 <div class="col-lg-12">
                                     <?php

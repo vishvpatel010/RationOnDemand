@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'authentication.php';
 include '../includes/db.php';
 require_once '../Twilio/autoload.php'; 
     
