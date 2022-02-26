@@ -11,7 +11,7 @@
           <div class="panel-body">
                 <form role="form" action="notification.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
-
+        
                     <div class="form-group col-lg-12">
                         <label for="name">Name</label><br>
                         <input type="text" class="form-control" name="name" value="<?php echo $data['name']; ?>"><br>

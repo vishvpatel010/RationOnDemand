@@ -1,16 +1,21 @@
 <?php
  require '../FPDF/fpdf.php';
-
+ date_default_timezone_set("Asia/Kolkata");
   session_start();
   include('../includes/db.php');
   $id=$_REQUEST['id'];
-
+    $date=date('d/m/Y', time());
     $pdf = new FPDF();
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',14); 
+    $pdf->Rect(5, 5, 200, 287, 'D');
     // Set PDF Header
     $pdf->Cell(60);
     $pdf->Cell(70,10,'Report',1,0,'C');
+    $pdf->Ln();
+    $pdf->Ln();
+    //Date
+    $pdf->Cell(43,10,"DATE: ".$date,1);
     $pdf->Ln();
     $pdf->Ln();
     // Table
@@ -26,7 +31,9 @@
   $row = mysqli_fetch_assoc($result);
   $pin = $row['pincode'];
 
-  $result1 = mysqli_query($con, "SELECT *FROM delivery_status where pincode = $pin");
+  // $result1 = mysqli_query($con, "SELECT *FROM delivery_status where `pincode` = '$pin' AND `date/time` > now() - interval 24 hour");
+    $result1 = mysqli_query($con, "SELECT *FROM delivery_status where `pincode` = '$pin' AND DATE(`date/time`) = CURDATE()");
+
   while($data = mysqli_fetch_assoc($result1)){
   $no = $data['no'];
   $id = $data['id'];

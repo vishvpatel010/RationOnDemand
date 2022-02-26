@@ -187,7 +187,11 @@ $row = mysqli_fetch_array($result);
               <!-- page start-->
               <section class="panel">
                   <header class="panel-heading">
-                      Officer List     <a class="btn btn-info" type="button" href="stock_update.php" style="float: right;">Update Stock</a><br><br>
+                      Officer List     
+                      <div style="float: right;">
+                      <a class="btn btn-info" type="button" href="stock_update.php">Update Stock</a>
+                      <a class="btn btn-info" type="button" href="admin_report.php">Report</a>
+                    </div><br><br>
                   </header>
                   <div class="panel-body">
                       <div class="adv-table editable-table ">
@@ -209,7 +213,7 @@ $row = mysqli_fetch_array($result);
                                   <th>Total Available Stock</th>
                                   <th>Delivered Stock</th>
                                   <th>Action</th>
-                                  <th>Report</th>
+                                  <th>Report Generate</th>
                               </tr>
                               </thead>
                               <?php
@@ -236,11 +240,13 @@ $row = mysqli_fetch_array($result);
                                     <a class="btn btn-sm btn-outline-secondary badge" type="button" href="officer_delete.php?id=<?php echo $data['id']; ?>"><i class="fa fa-trash"></i></a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-sm btn-outline-secondary badge" type="button" href="officer_report.php?id=<?php echo $data['id']; ?>">Generate</a>
+                                <a class="btn btn-sm btn-outline-secondary badge" type="button" href="officer_report.php?id=<?php echo $data['id']; ?>">Today</a>
+                                    <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#officer_report_date<?php echo $data['id']; ?>"> Specific Date</button>
                                 </td>
                               </tr>
                               <?php 
                                 include 'officer_edit.php';
+                                include 'officer_report_date.php';
                                 } ?>
                               </tbody>
                           </table>

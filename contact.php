@@ -148,15 +148,15 @@ session_start();
               <div class="row">
                 <div class="col-sm-6 py-2">
                   <label for="name" class="fg-grey">Name</label>
-                  <input type="text" class="form-control" name="name" placeholder="Enter name..">
+                  <input type="text" class="form-control" name="name" placeholder="Enter name.." required>
                 </div>
                 <div class="col-sm-6 py-2">
                   <label for="email" class="fg-grey">Email</label>
-                  <input type="email" class="form-control" name="email" placeholder="Email address..">
+                  <input type="email" class="form-control" name="email" placeholder="Email address.." required>
                 </div>
                 <div class="col-12 py-2">
                   <label for="subject" class="fg-grey">Subject</label>
-                  <input type="text" class="form-control" name="subject" placeholder="Subject..">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject.." required>
                 </div>
                 <div class="col-12 py-2">
                   <label for="message" class="fg-grey">Message</label>

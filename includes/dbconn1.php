@@ -8,7 +8,7 @@ use Kreait\Firebase\Auth;
 
 $factory = (new Factory())
 
-	-> withServiceAccount(__DIR__.'/rationondemand1-firebase-adminsdk-g3fbl-e64b13f8be.json')
+	-> withServiceAccount(__DIR__.'/rationondemand1-firebase-adminsdk-g3fbl-5dd9debb86.json')
 	-> withDatabaseUri('https://rationondemand1-default-rtdb.firebaseio.com/');
 
 	$database = $factory->createDatabase();

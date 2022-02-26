@@ -1,5 +1,6 @@
 <?php 
 include 'authentication.php';
+include '../includes/db.php';
 // Update the path below to your autoload.php, 
 // see https://getcomposer.org/doc/01-basic-usage.md 
 require_once '../Twilio/autoload.php'; 
@@ -12,7 +13,8 @@ $twilio = new Client($sid, $token);
  
 
 if(isset($_POST['submit']))
-{
+{   
+    $id = $_POST['id'];
     $name=$_POST['name'];
     $mono = "+91".$_POST['mono'];
     $msg = $_POST['msg'];
@@ -26,7 +28,9 @@ if(isset($_POST['submit']))
                     ) 
             ); 
             // print($message->sid);
-    if($message)
+            $mid=$message->sid;
+    $result = mysqli_query($con,"INSERT INTO `message_info` (`mid`,`uid`,`name`,`mono`,`message`) VALUES('$mid','$id','$name','$mono','$mess')");
+    if($message && $result)
     {
         $_SESSION['status'] = "Message Successfully Send";
         header("Location: index.php");

@@ -136,7 +136,7 @@ input[type=number] {
             </div>
             <div class="col-6">
                 <label for="rano">Ration NO.</label><br>
-                <input type="text" class="form-control" name="rano" placeholder="Ration No." pattern="[0-9]{12,12}" title="Enter Valid 12 Digit Ration Number" required><br>
+                <input type="text" class="form-control" name="rano" placeholder="Ration No." pattern="[0-9]{15,15}" title="Enter Valid 12 Digit Ration Number" required><br>
             </div>
             <div class="col-6">
                 <label for="aano">Aadhar No.</label><br>
