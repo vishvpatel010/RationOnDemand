@@ -6,20 +6,12 @@ include('../includes/db.php');
 if(isset($_POST['update']))
 {
   $id=$_POST['id'];
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-  $mono = $_POST['mono'];
-  $rano = $_POST['rano'];
-  $dob = $_POST['dob'];
   $city = $_POST['city'];
   $address=$_POST['address'];
-  $state = $_POST['state'];
   $pincode = $_POST['pincode'];
-  $gender = $_POST['gender'];
-  $aano = $_POST['aano'];
 
 
-$result=mysqli_query($con,"UPDATE `userdata` SET `name`='$name', `email`='$email', `mono`='$mono', `rano`='$rano', `dob`='$dob', `address`='$address', `city`='$city', `state`='$state', `pincode`='$pincode', `gender`='$gender', `aano`='$aano' where `id`='$id'");
+$result=mysqli_query($con,"UPDATE `userdata` SET `address`='$address', `city`='$city', `pincode`='$pincode' where `id`='$id'");
 
 if($result)
 {

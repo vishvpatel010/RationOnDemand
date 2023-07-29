@@ -89,7 +89,7 @@ input[type=number] {
     ?>
           
           <div class="col-12">
-      <form action="handleregister.php" method="POST">
+      <form action="handleregister.php" method="POST" >
         <div class="row g-3">
             <div class="col-6">
                 <label for="name">Name</label><br>
@@ -136,13 +136,13 @@ input[type=number] {
             </div>
             <div class="col-6">
                 <label for="rano">Ration NO.</label><br>
-                <input type="text" class="form-control" name="rano" placeholder="Ration No." pattern="[0-9]{15,15}" title="Enter Valid 12 Digit Ration Number" required><br>
+                <input type="text" class="form-control" name="rano" placeholder="Ration No." pattern="[0-9]{15,15}" title="Enter Valid 15 Digit Ration Number" required><br>
             </div>
             <div class="col-6">
                 <label for="aano">Aadhar No.</label><br>
                 <input type="text" class="form-control" name="aano" placeholder="Aadhar No." pattern="[0-9]{12,12}" title="Enter Valid 12  Digit Aadhar Number" required><br>
             </div>
-                <div class="col-12 ms-1">
+            <div class="col-12 ms-1">
                 <center>
                 <button type="submit" class="btn btn-primary" name="register">Register</button>
                 <button type="reset" class="btn btn-primary">Reset</button>

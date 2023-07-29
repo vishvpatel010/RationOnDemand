@@ -87,6 +87,7 @@ $aano = $row['aano'];;
                         <ul class="dropdown-menu extended">
                             <div class="log-arrow-up"></div>
                             <li><a href="../officer"><h4><i class=" fa fa-home"></i> Home</h4></a></li>
+                            <li><a href="pending.php"><h4><i class="fa-solid fa-hourglass"></i> Pending Request</h4></a></li>
                             <li><a href="logout.php"><h4><i class="fa fa-sign-out"></i> Log Out</h4></a></li>
                         </ul>
                     </li>
